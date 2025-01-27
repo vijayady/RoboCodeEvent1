@@ -1,0 +1,15 @@
+{
+  "name": "ShadowBot",
+  "version": "1.0",
+  "authors": [
+    "Deena Dhayalan Boopathy"
+  ],
+  "description": "Shadow Bot",
+  "homepage": "",
+  "countryCodes": [
+    "us"
+  ],
+  "platform": "JVM",
+  "programmingLang": "Java 11",
+  "initialPosition": "50,50, 90"
+}
