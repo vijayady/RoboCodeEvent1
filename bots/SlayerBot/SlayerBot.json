@@ -1,0 +1,15 @@
+{
+  "name": "SlayerBot",
+  "version": "1.0",
+  "authors": [
+    "Deena Dhayalan Boopathy"
+  ],
+  "description": "My Slayer Bot",
+  "homepage": "",
+  "countryCodes": [
+    "us"
+  ],
+  "platform": "JVM",
+  "programmingLang": "Java 11",
+  "initialPosition": "80,75, 90"
+}
