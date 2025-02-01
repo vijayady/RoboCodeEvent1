@@ -13,7 +13,7 @@ import java.awt.Color;
 public class VjBot extends Bot {
 
     int dist = 50; // Distance to move when we're hit, forward or back
-
+    int turnCounter=8;
     // The main method starts our bot
     public static void main(String[] args) {
         new VjBot().start();
@@ -34,11 +34,26 @@ public class VjBot extends Bot {
         setRadarColor(new Color(0xFF, 0x00, 0x00));  // red
         setScanColor(new Color(0xFF, 0x00, 0x00));   // red
         setBulletColor(new Color(0x00, 0x88, 0xFF)); // light blue
+        turnCounter = 0;
 
+        setGunTurnRate(15);
         // Spin the gun around slowly... forever
+//        while (isRunning()) {
+//            // Turn the gun a bit if the bot if the target speed is 0
+//            turnGunLeft(5);
+//        }
         while (isRunning()) {
-            // Turn the gun a bit if the bot if the target speed is 0
-            turnGunLeft(5);
+
+            if (turnCounter % 64 == 0) {
+                // Straighten out, if we were hit by a bullet (ends turning)
+                setTurnRate(0);
+                fire(1);
+                // Go forward with a target speed of 4
+                setTargetSpeed(4);
+            }
+            turnCounter++;
+            fire(3);
+            go(); // execute turn
         }
     }
 
@@ -49,9 +64,11 @@ public class VjBot extends Bot {
         var distance = distanceTo(e.getX(), e.getY());
         if (distance < 50 && getEnergy() > 50) {
             fire(3);
+            fire(3);
         } else {
             // Otherwise, only fire 1
             fire(1);
+            fire(3);
         }
         // Rescan
         rescan();
