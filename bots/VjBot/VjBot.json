@@ -1,0 +1,16 @@
+{
+  "name": "VijaysBot",
+  "version": "1.0",
+  "authors": [
+    "Vijay Ravi Adyanthaya",
+    "Darsh Adyanthaya"
+  ],
+  "description": "This bot is based on Fire bot which sits still. Spins gun around. Moves when hit.",
+  "homepage": "",
+  "countryCodes": [
+    "IN",
+    "IN"
+  ],
+  "platform": "JVM",
+  "programmingLang": "Java 11"
+}
