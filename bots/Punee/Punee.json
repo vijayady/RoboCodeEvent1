@@ -1,0 +1,16 @@
+{
+  "name": "Punee",
+  "version": "1.0",
+  "authors": [
+    "Punith ",
+    "Wipro "
+  ],
+  "description": "This bot is for expiriment.",
+  "homepage": "",
+  "countryCodes": [
+    "IN",
+    "IN"
+  ],
+  "platform": "JVM",
+  "programmingLang": "Java 11"
+}

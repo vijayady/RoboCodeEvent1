@@ -47,4 +47,4 @@ EXPOSE 6080
 RUN javac CheckTranslucency.java
 
 # Start X2Go server, VNC server, and the application
-CMD ["sh", "-c", "service x2goserver start && mkdir -p /root/.vnc && echo 'password' | vncpasswd -f > /root/.vnc/passwd && chmod 600 /root/.vnc/passwd && vncserver :1 -geometry 1280x800 -depth 24 -xstartup /usr/bin/startxfce4 && /opt/novnc/utils/launch.sh --vnc localhost:5901 --listen 6080 && DISPLAY=:1 java CheckTranslucency && DISPLAY=:1 java -cp .:lib/* -jar robocode-tankroyale-gui-0.29.0.jar"]
+CMD ["sh", "-c", "service x2goserver start && mkdir -p /root/.vnc && echo 'password' | vncpasswd -f > /root/.vnc/passwd && chmod 600 /root/.vnc/passwd && vncserver :1 -geometry 1280x800 -depth 24 -xstartup /usr/bin/startxfce4 && /opt/novnc/utils/launch.sh --vnc localhost:5901 --listen 6080 & while ! xdpyinfo -display :1 > /dev/null 2>&1; do echo 'Waiting for X server...' && sleep 1; done && echo 'Starting CheckTranslucency...' && DISPLAY=:1 java CheckTranslucency && echo 'Starting Robocode...' && DISPLAY=:1 java -cp .:lib/* -jar robocode-tankroyale-gui-0.29.0.jar"]
