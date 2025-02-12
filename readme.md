@@ -1,4 +1,5 @@
 ## RoboCode Event 
+Welcome to the Robo Code Event 1 Repository 
 ###docker build -t robo-code .
 ###docker run -p 5901:5901 -p 6080:6080 robo-code
 
